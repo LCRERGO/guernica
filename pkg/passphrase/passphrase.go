@@ -50,7 +50,7 @@ func Generate(n int, separator string, words []string) (string, error) {
 
 	selected := make([]string, n)
 	max := big.NewInt(int64(len(words)))
-	for i := 0; i < n; i++ {
+	for i := range n {
 		randInt, err := rand.Int(rand.Reader, max)
 		if err != nil {
 			return "", fmt.Errorf("random: %w", err)
